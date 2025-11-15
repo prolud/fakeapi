@@ -1,0 +1,16 @@
+digraph CSharpDependencies {
+  graph [rankdir=LR, fontname="Helvetica", fontsize=14, splines=sprite, overlap=false, nodesep=0.2, ranksep=0.8];
+  node [shape=box, style=filled, fillcolor=lightblue, fontname="Helvetica", fontsize=11];
+  edge [fontname="Helvetica", fontsize=9];
+
+  "api" [label="api\n(net10.0)"];
+  "application" [label="application\n(net10.0)"];
+  "domain" [label="domain\n(net10.0)"];
+  "infra" [label="infra\n(net10.0)"];
+
+  // Project reference edges
+  "api" -> "application" [penwidth=1.0];
+  "api" -> "infra" [penwidth=1.0];
+  "application" -> "domain" [penwidth=1.0];
+  "infra" -> "domain" [penwidth=1.0];
+}
