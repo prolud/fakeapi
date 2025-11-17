@@ -1,9 +1,10 @@
 using application.Dtos;
 using domain.Interfaces.Repositories;
+using domain.Interfaces.Services;
 
 namespace application.UseCases
 {
-    public class LoginUseCase(IUserRepository _userRepository)
+    public class LoginUseCase(IUserRepository _userRepository, IJwtService _jwtService)
     {
         public async Task<UseCaseResult> ExecuteAsync(string username, string password)
         {
@@ -22,7 +23,7 @@ namespace application.UseCases
             {
                 Content = new
                 {
-                    Token = GenerateJwtUseCase.ExecuteAsync(),
+                    Token = _jwtService.GenerateJwt(),
                     Expires = DateTime.UtcNow.AddDays(1),
                     Type = "Bearer",
                 }
