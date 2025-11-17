@@ -21,11 +21,10 @@ namespace application.UseCases
 
             return new()
             {
-                Content = new
+                Content = new JwtResult
                 {
                     Token = _jwtService.GenerateJwt(),
                     Expires = DateTime.UtcNow.AddDays(1),
-                    Type = "Bearer",
                 }
             };
         }
