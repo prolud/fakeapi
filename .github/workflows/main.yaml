@@ -1,7 +1,12 @@
 name: build + test
 
+on:
+  pull_request:
+    branches:
+      - master
+
 jobs:
-  buildntest:
+  build_n_test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
