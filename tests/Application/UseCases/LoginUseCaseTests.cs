@@ -33,7 +33,7 @@ namespace tests.Application.UseCases
             var result = await _useCase.ExecuteAsync("login", "password");
 
             Assert.Equal(HttpStatusCode.OK, result.StatusCode);
-            Assert.NotNull(result.Content); // teste
+            Assert.NotNull(result.Content);
         }
 
         [Fact]
