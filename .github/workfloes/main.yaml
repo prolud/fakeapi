@@ -1,0 +1,19 @@
+name: build + test
+
+jobs:
+  build_n_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        
+      - name: setup
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 10.0.X
+        
+      - name: build
+        run: dotnet build
+
+      - name: test
+        run: dotnet test
