@@ -1,7 +1,7 @@
 name: build + test
 
 jobs:
-  build_n_test:
+  buildntest:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
