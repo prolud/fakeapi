@@ -19,7 +19,7 @@ builder.Services.AddScoped<LoginUseCase>();
 
 builder.Services.AddScoped<IJwtService, JwtService>();
 
-builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddDbContext<AppDbContext>()
 /// DI
 
 var app = builder.Build();
