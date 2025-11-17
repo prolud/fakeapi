@@ -17,7 +17,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<LoginUseCase>();
 
-builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<IJwtService, JwtService>()
 
 builder.Services.AddDbContext<AppDbContext>()
 /// DI
