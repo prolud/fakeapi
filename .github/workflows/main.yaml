@@ -1,4 +1,4 @@
-name: build + test
+name: Build + Test
 
 on:
   pull_request:
@@ -6,19 +6,29 @@ on:
       - master
 
 jobs:
-  build_n_test:
+  Build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v3
         
-      - name: setup
+      - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 10.0.X
         
-      - name: build
+      - name: Build
         run: dotnet build
-
-      - name: test
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 10.0.X
+        
+      - name: Test
         run: dotnet test
